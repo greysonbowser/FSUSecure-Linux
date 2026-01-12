@@ -2,10 +2,16 @@
 This is a NetworkManager configuration for connecting to FSUSecure on Linux. 
 
 ## Usage
-Check that your device can find FSUSecure:
->$ nmcli device wifi list
+After downloading/copying, move the file to `/etc/NetworkManager/system-connections/FSUSecure.nmconnection`.
 
-Move the file to /etc/NetworkManager/system-connections/FSUSecure.nmconnection
+Networkmanager ignores files not owned and readable by root, so run:
 
+```bash
+$ sudo chmod -R 600 /etc/.../FSUSecure.nmconnection
+$ sudo chown -R root:root /etc/.../FSUSecure.nmconnection
+```
 Now you can activate the connection with
->$ nmcli connection up FSUSecure
+
+```bash
+$ nmcli con up FSUSecure
+```
